@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code workspace
+.claude/
+
+# IDE
+.vscode/
+.idea/
+
+# Node.js (app/ has its own .gitignore, but catch any stray ones at root)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Terraform (terraform/ has its own .gitignore, but catch any stray)
+*.tfstate
+*.tfstate.backup
+*.tfvars
+!*.tfvars.example
+.terraform/
+.terraform.lock.hcl
+
+# Temporary
+*.log
+*.tmp
