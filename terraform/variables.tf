@@ -1,9 +1,3 @@
-variable "github_token" {
-  description = "GitHub personal access token with repo scope used by Amplify to clone the repository."
-  type        = string
-  sensitive   = true
-}
-
 variable "github_repo" {
   description = "GitHub repository URL (e.g. https://github.com/USER/bertila)."
   type        = string

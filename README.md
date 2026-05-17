@@ -74,26 +74,27 @@ aws sts get-caller-identity --profile bertila
 
 Used during development and review. Amplify hosts the site and gives you a public URL like `https://main.xxxxxxxxxx.amplifyapp.com`. No custom domain or Route53 resources are created.
 
-1. Copy the example variables file:
+1. Install the **AWS Amplify Hosting** GitHub App on the repository owner (one-time, no PAT needed):
+
+   <https://github.com/apps/aws-amplify-hosting> → Install → grant access to `YOUR_USERNAME/bertila`. Skip if already installed.
+
+2. Copy the example variables file:
 
    ```bash
    cd terraform
    cp terraform.tfvars.example terraform.tfvars
    ```
 
-2. Edit `terraform.tfvars` and fill in:
+3. Edit `terraform.tfvars` and fill in:
 
    ```hcl
-   github_token         = "ghp_…"     # GitHub PAT with `repo` scope
    github_repo          = "https://github.com/Caballosanex/bertila"
    branch               = "main"
    enable_custom_domain = false        # ← keep false for Phase 1
    domain_name          = "bertila.es"
    ```
 
-   You can create the GitHub PAT at <https://github.com/settings/tokens?type=beta>. Choose `Contents: Read-only` for the `Caballosanex/bertila` repo.
-
-3. Apply:
+4. Apply:
 
    ```bash
    terraform init
@@ -101,7 +102,7 @@ Used during development and review. Amplify hosts the site and gives you a publi
    terraform apply
    ```
 
-4. After the plan succeeds, Terraform outputs the Amplify default URL:
+5. After the plan succeeds, Terraform outputs the Amplify default URL:
 
    ```
    amplify_default_url = "https://main.xxxxxxxxxx.amplifyapp.com"

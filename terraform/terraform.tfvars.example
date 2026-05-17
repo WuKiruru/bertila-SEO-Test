@@ -1,9 +1,12 @@
 # Copy this file to terraform.tfvars and fill in your real values.
 # terraform.tfvars is gitignored — never commit it.
 
-github_token = "ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-github_repo  = "https://github.com/YOUR_USERNAME/bertila"
-branch       = "main"
+# Authentication: Amplify connects to GitHub via the "AWS Amplify Hosting"
+# GitHub App. Install once at https://github.com/apps/aws-amplify-hosting and
+# grant access to the repository below — no PAT needed.
+
+github_repo = "https://github.com/YOUR_USERNAME/bertila"
+branch      = "main"
 
 # Phase 1: keep custom domain disabled — Amplify gives you a default amplifyapp.com URL.
 # Phase 2: when the client approves, set this to true and run `terraform apply` to attach bertila.es.

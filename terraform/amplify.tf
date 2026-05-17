@@ -1,8 +1,15 @@
 resource "aws_amplify_app" "bertila" {
   name                 = var.app_name
   repository           = var.github_repo
-  access_token         = var.github_token
   iam_service_role_arn = aws_iam_role.amplify.arn
+
+  # GitHub auth: Amplify uses the "AWS Amplify Hosting" GitHub App
+  # (installed once at https://github.com/apps/aws-amplify-hosting on the
+  # repository owner). No access_token / oauth_token needed — the App
+  # authorization is account-scoped on the AWS side.
+  lifecycle {
+    ignore_changes = [access_token, oauth_token]
+  }
 
   enable_auto_branch_creation = false
   enable_branch_auto_build    = true
