@@ -41,13 +41,13 @@ resource "aws_amplify_app" "bertila" {
               - .next/cache/**/*
   EOT
 
-  # Redirect apex → www so we serve a single canonical URL. CloudFront's
-  # default behaviour returns the same content under both hostnames; this
-  # 302 keeps things consistent and helps SEO consolidation.
+  # Canonical host is the apex (bertila.es, no www). Redirect www → apex
+  # with a 301 (permanent) so Google consolidates ranking signals and
+  # Search Console doesn't flag the canonical mismatch.
   custom_rule {
-    source = "https://${var.domain_name}"
-    status = "302"
-    target = "https://www.${var.domain_name}"
+    source = "https://www.${var.domain_name}"
+    status = "301"
+    target = "https://${var.domain_name}"
   }
 
   environment_variables = {
