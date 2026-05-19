@@ -64,3 +64,17 @@ resource "aws_route53_record" "www" {
 
   allow_overwrite = true
 }
+
+# TXT record for Google Search Console domain verification.
+# Created only when var.google_site_verification is set.
+resource "aws_route53_record" "google_site_verification" {
+  count = var.enable_custom_domain && var.google_site_verification != "" ? 1 : 0
+
+  zone_id = aws_route53_zone.bertila[0].zone_id
+  name    = var.domain_name
+  type    = "TXT"
+  ttl     = 300
+  records = ["google-site-verification=${var.google_site_verification}"]
+
+  allow_overwrite = true
+}

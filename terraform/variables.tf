@@ -32,3 +32,9 @@ variable "budget_alert_email" {
   type        = string
   default     = "bertypala@gmail.com"
 }
+
+variable "google_site_verification" {
+  description = "Google Search Console verification token (the value AFTER 'google-site-verification='). Empty string disables the TXT record."
+  type        = string
+  default     = ""
+}
