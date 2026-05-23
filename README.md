@@ -11,6 +11,13 @@
 
 ---
 
+# Website improvements List
+
+- About image adjusted
+- Footer email wrap fixed
+
+---
+
 ## Legal contact
 
 Bertila Palà Ysamat — NIF 46237995Z
