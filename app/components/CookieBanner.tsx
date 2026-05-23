@@ -49,6 +49,7 @@ export function CookieBanner() {
                 {t("cookies.message")}{" "}
                 <Link
                   href="/politica-cookies"
+                  aria-label={t("cookies.more")}
                   className="font-medium text-navy-800 underline underline-offset-2 hover:text-accent-dark"
                 >
                   {t("cookies.more")}

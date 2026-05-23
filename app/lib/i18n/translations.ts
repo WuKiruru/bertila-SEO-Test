@@ -181,7 +181,7 @@ export const translations: Record<Language, TranslationDict> = {
         "Utilizamos cookies técnicas para que la web funcione bien. Puedes aceptar o rechazar las opcionales.",
       accept: "Aceptar",
       reject: "Rechazar",
-      more: "Más información",
+      more: "Leer la política de cookies",
     },
     legal: {
       back: "Volver a la página principal",
@@ -354,7 +354,7 @@ export const translations: Record<Language, TranslationDict> = {
         "Utilitzem galetes tècniques perquè el web funcioni bé. Pots acceptar o rebutjar les opcionals.",
       accept: "Accepta",
       reject: "Rebutja",
-      more: "Més informació",
+      more: "Llegir la política de galetes",
     },
     legal: {
       back: "Tornar a la pàgina principal",
