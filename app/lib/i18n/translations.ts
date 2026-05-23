@@ -151,6 +151,27 @@ export const translations: Record<Language, TranslationDict> = {
             "Atiendo en toda Cataluña: Barcelona, Tarragona, Girona y Lleida, incluidos sus pueblos y comarcas. El asesoramiento inicial es siempre sin compromiso.",
         },
       ],
+      sourcesTitle: "Fuentes oficiales",
+      sourcesIntro:
+        "Si quieres profundizar, consulta directamente la normativa y las guías oficiales:",
+      sources: [
+        {
+          label: "Notariado: venta de nuda propiedad",
+          url: "https://www.notariado.org/portal/-/%C2%BFen-qu%C3%A9-consiste-la-venta-de-la-nuda-propiedad-",
+        },
+        {
+          label: "Banco de España: hipoteca inversa",
+          url: "https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/hipotecasespecia/Hipoteca_inversa.html",
+        },
+        {
+          label: "BOE: Ley 41/2007 (regulación de la hipoteca inversa)",
+          url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-21086",
+        },
+        {
+          label: "Código Civil: usufructo (arts. 467-529)",
+          url: "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763",
+        },
+      ],
     },
     contact: {
       eyebrow: "Contacto",
@@ -322,6 +343,27 @@ export const translations: Record<Language, TranslationDict> = {
           question: "A quines zones de Catalunya ofereixes el servei?",
           answer:
             "Atenc a tota Catalunya: Barcelona, Tarragona, Girona i Lleida, incloent-hi pobles i comarques. L'assessorament inicial sempre és sense compromís.",
+        },
+      ],
+      sourcesTitle: "Fonts oficials",
+      sourcesIntro:
+        "Si vols aprofundir, consulta directament la normativa i les guies oficials:",
+      sources: [
+        {
+          label: "Notariat: venda de nuda propietat",
+          url: "https://www.notariado.org/portal/-/%C2%BFen-qu%C3%A9-consiste-la-venta-de-la-nuda-propiedad-",
+        },
+        {
+          label: "Banc d'Espanya: hipoteca inversa",
+          url: "https://clientebancario.bde.es/pcb/es/menu-horizontal/productosservici/financiacion/hipotecas/guia-textual/hipotecasespecia/Hipoteca_inversa.html",
+        },
+        {
+          label: "BOE: Llei 41/2007 (regulació de la hipoteca inversa)",
+          url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-21086",
+        },
+        {
+          label: "Codi Civil: usdefruit (arts. 467-529)",
+          url: "https://www.boe.es/buscar/act.php?id=BOE-A-1889-4763",
         },
       ],
     },
