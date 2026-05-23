@@ -2,11 +2,11 @@
 
 ---
 
-- Implementation of JSON-LD (Organized and Linked metadata on JSON structures to improve readilibity).
-- i18n lenguage cookie autodetect.
-- Adaptative metadata for each lenguage (JSON-LD) for layaout.tsx and page.tsx.
-- Implementation of metadata on Legal pages.
-- Metadata implementation for twitter browser searches.
+- Implementation of JSON-LD (structured and linked metadata using JSON format to improve readability and search engine understanding).
+- i18n language cookie auto-detection.
+- Adaptive metadata for each language (JSON-LD) in layout.tsx and page.tsx.
+- Implementation of metadata for legal pages.
+- Metadata optimization for Twitter/X search and link previews.
 - Next.js sitemap implementation.
 
 ---
