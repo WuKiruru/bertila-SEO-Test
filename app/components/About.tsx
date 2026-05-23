@@ -20,7 +20,7 @@ export function About() {
               alt={t("about.portraitAlt")}
               fill
               sizes="(max-width: 768px) 90vw, 40vw"
-              className="object-cover object-top"
+              className="object-cover object-[center_80%]"
             />
             <div className="absolute bottom-6 left-6 inline-flex items-center rounded-full bg-navy-800/95 px-4 py-2 text-white shadow-lg backdrop-blur">
               <p className="font-serif text-lg">{t("about.title")}</p>
