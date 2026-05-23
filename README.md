@@ -1,4 +1,6 @@
-# Bertila - SEO improvements List
+# Bertila
+
+##SEO improvements List
 
 ---
 
@@ -11,7 +13,7 @@
 
 ---
 
-# Website improvements List
+## Website improvements List
 
 - About image adjusted
 - Footer email wrap fixed
