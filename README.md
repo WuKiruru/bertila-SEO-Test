@@ -1,6 +1,6 @@
 # Bertila
 
-##SEO improvements List
+## SEO improvements List
 
 ---
 
