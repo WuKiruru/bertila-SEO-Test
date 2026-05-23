@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { href: "/#about", key: "nav.about" },
   { href: "/#services", key: "nav.services" },
   { href: "/#testimonials", key: "nav.testimonials" },
+  { href: "/#faq", key: "nav.faq" },
   { href: "/#contact", key: "nav.contact" },
 ];
 

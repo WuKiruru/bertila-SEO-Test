@@ -19,6 +19,7 @@ export const translations: Record<Language, TranslationDict> = {
       about: "Quién soy",
       services: "Servicios",
       testimonials: "Clientes",
+      faq: "Preguntas",
       contact: "Contacto",
       cta: "Llámame",
       menuOpen: "Abrir menú",
@@ -27,8 +28,9 @@ export const translations: Record<Language, TranslationDict> = {
     },
     hero: {
       eyebrow: "Ayuda inmobiliaria para mayores de 65 años",
-      title: "Asesoramiento Inmobiliario en Cataluña",
-      subtitle: "Tu vivienda puede ayudarte a vivir con más tranquilidad.",
+      title: "Nuda propiedad y vivienda inversa en Cataluña",
+      subtitle:
+        "Obtén dinero de tu vivienda sin dejar de vivir en ella. Te asesoro de forma cercana y sin compromiso en toda Cataluña.",
       ctaCall: "Llámame ahora",
       ctaLearn: "Ver mis servicios",
       imageAlt: "",
@@ -115,6 +117,41 @@ export const translations: Record<Language, TranslationDict> = {
       ],
       photoAlt: "Foto del cliente",
     },
+    faq: {
+      eyebrow: "Preguntas frecuentes",
+      title: "Resuelve tus dudas sobre nuda propiedad",
+      subtitle:
+        "Las preguntas más habituales sobre nuda propiedad, vivienda inversa e hipoteca inversa.",
+      items: [
+        {
+          question: "¿Qué es la nuda propiedad?",
+          answer:
+            "La nuda propiedad es el derecho de propiedad sobre una vivienda separado del usufructo. Vendes la nuda propiedad pero conservas el usufructo: sigues viviendo en tu casa de por vida y recibes un capital o renta mensual del comprador.",
+        },
+        {
+          question:
+            "¿Qué diferencia hay entre nuda propiedad y vivienda inversa?",
+          answer:
+            "En la nuda propiedad vendes solo la propiedad y mantienes el derecho de uso (usufructo) toda la vida. En la vivienda inversa vendes la plena propiedad y te quedas como inquilino con el alquiler ya descontado del precio, por lo que vives sin pagar renta de por vida.",
+        },
+        {
+          question: "¿Cómo funciona la hipoteca inversa?",
+          answer:
+            "La hipoteca inversa es un préstamo hipotecario pensado para mayores de 65 años. La entidad financiera o aseguradora te paga un capital o renta mensual usando tu vivienda como garantía. La deuda se devuelve por los herederos tras el fallecimiento, normalmente vendiendo la casa.",
+        },
+        {
+          question:
+            "¿Puedo seguir viviendo en mi casa si vendo la nuda propiedad?",
+          answer:
+            "Sí. Al vender solo la nuda propiedad conservas el usufructo vitalicio, lo que te da derecho a vivir en la vivienda toda la vida. Si en algún momento necesitas dejarla, también puedes alquilarla.",
+        },
+        {
+          question: "¿En qué zonas de Cataluña ofreces el servicio?",
+          answer:
+            "Atiendo en toda Cataluña: Barcelona, Tarragona, Girona y Lleida, incluidos sus pueblos y comarcas. El asesoramiento inicial es siempre sin compromiso.",
+        },
+      ],
+    },
     contact: {
       eyebrow: "Contacto",
       title: "Llámame y hablamos",
@@ -156,6 +193,7 @@ export const translations: Record<Language, TranslationDict> = {
       about: "Qui sóc",
       services: "Serveis",
       testimonials: "Clients",
+      faq: "Preguntes",
       contact: "Contacte",
       cta: "Truca'm",
       menuOpen: "Obrir menú",
@@ -164,8 +202,9 @@ export const translations: Record<Language, TranslationDict> = {
     },
     hero: {
       eyebrow: "Ajuda immobiliària per a majors de 65 anys",
-      title: "Assessorament Immobiliari a Catalunya",
-      subtitle: "La teva casa pot ajudar-te a viure amb més tranquil·litat.",
+      title: "Nuda propietat i vivenda inversa a Catalunya",
+      subtitle:
+        "Obtingues diners de casa teva sense deixar de viure-hi. T'assessoro de manera propera i sense compromís a tota Catalunya.",
       ctaCall: "Truca'm ara",
       ctaLearn: "Veure els serveis",
       imageAlt: "",
@@ -251,6 +290,40 @@ export const translations: Record<Language, TranslationDict> = {
         },
       ],
       photoAlt: "Foto del client",
+    },
+    faq: {
+      eyebrow: "Preguntes freqüents",
+      title: "Resol els teus dubtes sobre la nuda propietat",
+      subtitle:
+        "Les preguntes més habituals sobre nuda propietat, vivenda inversa i hipoteca inversa.",
+      items: [
+        {
+          question: "Què és la nuda propietat?",
+          answer:
+            "La nuda propietat és el dret de propietat sobre una vivenda separat de l'usdefruit. Vens la nuda propietat però conserves l'usdefruit: segueixes vivint a casa teva tota la vida i reps un capital o renda mensual del comprador.",
+        },
+        {
+          question:
+            "Quina diferència hi ha entre nuda propietat i vivenda inversa?",
+          answer:
+            "En la nuda propietat vens només la propietat i mantens el dret d'ús (usdefruit) tota la vida. En la vivenda inversa vens la plena propietat i et quedes com a llogater amb el lloguer ja descomptat del preu, de manera que vius sense pagar renda tota la vida.",
+        },
+        {
+          question: "Com funciona la hipoteca inversa?",
+          answer:
+            "La hipoteca inversa és un préstec hipotecari pensat per a majors de 65 anys. L'entitat financera o asseguradora et paga un capital o renda mensual fent servir la teva vivenda com a garantia. El deute el tornen els hereus després de la mort, normalment venent la casa.",
+        },
+        {
+          question: "Puc seguir vivint a casa meva si venc la nuda propietat?",
+          answer:
+            "Sí. En vendre només la nuda propietat conserves l'usdefruit vitalici, que et dóna dret a viure a la vivenda tota la vida. Si en algun moment l'has de deixar, també la pots llogar.",
+        },
+        {
+          question: "A quines zones de Catalunya ofereixes el servei?",
+          answer:
+            "Atenc a tota Catalunya: Barcelona, Tarragona, Girona i Lleida, incloent-hi pobles i comarques. L'assessorament inicial sempre és sense compromís.",
+        },
+      ],
     },
     contact: {
       eyebrow: "Contacte",

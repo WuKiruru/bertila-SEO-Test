@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getPreferredLanguage } from "@/lib/i18n/server-language";
+import { buildBreadcrumbJsonLd } from "@/lib/structured-data";
 import AvisoLegalContent from "./Content";
 
 export function generateMetadata(): Metadata {
@@ -8,7 +9,7 @@ export function generateMetadata(): Metadata {
 
   const title = isCa ? "Avís legal" : "Aviso Legal";
   const description = isCa
-    ? "Avis legal del lloc web bertila.es — dades identificatives del titular, condicions d'ús i propietat intel·lectual."
+    ? "Avís legal del lloc web bertila.es — dades identificatives del titular, condicions d'ús i propietat intel·lectual."
     : "Aviso legal del sitio web bertila.es — datos identificativos del titular, condiciones de uso y propiedad intelectual.";
 
   return {
@@ -34,5 +35,20 @@ export function generateMetadata(): Metadata {
 }
 
 export default function AvisoLegalPage() {
-  return <AvisoLegalContent />;
+  const lang = getPreferredLanguage();
+  const isCa = lang === "ca";
+  const breadcrumb = buildBreadcrumbJsonLd([
+    { name: isCa ? "Inici" : "Inicio", url: "/" },
+    { name: isCa ? "Avís legal" : "Aviso legal", url: "/aviso-legal" },
+  ]);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <AvisoLegalContent />
+    </>
+  );
 }

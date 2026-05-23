@@ -30,12 +30,12 @@ export function generateMetadata(): Metadata {
   const isCa = lang === "ca";
 
   const titleDefault = isCa
-    ? "Bertila — Nuda propietat i vivenda inversa a Catalunya"
-    : "Bertila — Nuda propiedad y vivienda inversa en Cataluña";
+    ? "Nuda propietat i vivenda inversa a Catalunya | Bertila"
+    : "Nuda propiedad y vivienda inversa en Cataluña | Bertila";
 
   const description = isCa
-    ? "Solucions immobiliàries per a majors de 65 anys a Catalunya: nuda propietat, vivenda inversa i hipoteca inversa."
-    : "Soluciones inmobiliarias para mayores de 65 años en Cataluña: nuda propiedad, venta con derecho de alquiler y vivienda inversa. Sigue viviendo en tu casa con tranquilidad.";
+    ? "Obtingues diners de casa teva sense deixar de viure-hi. Nuda propietat, vivenda inversa i hipoteca inversa per a majors de 65 anys a Catalunya. Assessorament sense compromís."
+    : "Obtén dinero de tu casa sin dejar de vivir en ella. Nuda propiedad, vivienda inversa e hipoteca inversa para mayores de 65 años en Cataluña. Asesoramiento sin compromiso.";
 
   return {
     metadataBase: new URL(SITE_CONFIG.url),
@@ -46,12 +46,21 @@ export function generateMetadata(): Metadata {
     description,
     keywords: [
       "nuda propiedad",
+      "nuda propiedad Cataluña",
+      "nuda propiedad Barcelona",
       "vivienda inversa",
       "venta con derecho de alquiler",
-      "personas mayores",
-      "Cataluña",
+      "hipoteca inversa",
+      "hipoteca inversa Cataluña",
+      "vender casa siguiendo viviendo",
+      "vender casa mayores 65 años",
+      "asesoramiento inmobiliario personas mayores",
+      "nuda propietat",
+      "vivenda inversa",
+      "hipoteca inversa Catalunya",
       "Barcelona",
-      "inmobiliaria",
+      "Cataluña",
+      "Catalunya",
       "Bertila",
     ],
     authors: [{ name: SITE_CONFIG.legalName }],
@@ -59,10 +68,6 @@ export function generateMetadata(): Metadata {
     publisher: SITE_CONFIG.legalName,
     alternates: {
       canonical: "/",
-      languages: {
-        "es-ES": "/",
-        "ca-ES": "/",
-      },
     },
     openGraph: {
       type: "website",
@@ -72,7 +77,7 @@ export function generateMetadata(): Metadata {
       siteName: SITE_CONFIG.name,
       title: titleDefault,
       description: isCa
-        ? "Converteix casa teva en tranquil·litat sense deixar de viure-hi. Assessorament proper per a majors de 65 anys a Catalunya."
+        ? "Converteix casa teva en tranquil·litat sense deixar de viure-hi. Assessorament proper per a majors de 65 anys a tota Catalunya."
         : "Convierte tu casa en tranquilidad sin dejar de vivir en ella. Asesoramiento cercano para mayores de 65 años en toda Cataluña.",
       images: [
         {
@@ -80,8 +85,8 @@ export function generateMetadata(): Metadata {
           width: 1200,
           height: 630,
           alt: isCa
-            ? "Bertila — Nuda propietat a Catalunya"
-            : "Bertila — Nuda propiedad en Cataluña",
+            ? "Bertila — Nuda propietat i vivenda inversa a Catalunya"
+            : "Bertila — Nuda propiedad y vivienda inversa en Cataluña",
         },
       ],
     },
@@ -89,8 +94,8 @@ export function generateMetadata(): Metadata {
       card: "summary_large_image",
       title: titleDefault,
       description: isCa
-        ? "Solucions immobiliàries per a persones majors a Catalunya."
-        : "Soluciones inmobiliarias para personas mayores en Cataluña.",
+        ? "Nuda propietat, vivenda inversa i hipoteca inversa per a majors de 65 anys a Catalunya."
+        : "Nuda propiedad, vivienda inversa e hipoteca inversa para mayores de 65 años en Cataluña.",
       images: ["/og-image.jpg"],
     },
     robots: {
@@ -101,6 +106,7 @@ export function generateMetadata(): Metadata {
         follow: true,
         "max-image-preview": "large",
         "max-snippet": -1,
+        "max-video-preview": -1,
       },
     },
     icons: {
@@ -111,6 +117,12 @@ export function generateMetadata(): Metadata {
       apple: "/apple-touch-icon.png",
     },
     manifest: "/site.webmanifest",
+    other: {
+      "geo.region": "ES-CT",
+      "geo.placename": SITE_CONFIG.address.city,
+      "geo.position": `${SITE_CONFIG.geo.latitude};${SITE_CONFIG.geo.longitude}`,
+      ICBM: `${SITE_CONFIG.geo.latitude}, ${SITE_CONFIG.geo.longitude}`,
+    },
   };
 }
 
@@ -127,10 +139,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const lang = getPreferredLanguage();
-  const jsonLd = buildLocalBusinessJsonLd();
-  const organizationJsonLd = buildOrganizationJsonLd();
-  const websiteJsonLd = buildWebSiteJsonLd();
-  const servicesJsonLd = buildServicesJsonLd();
+  const jsonLd = buildLocalBusinessJsonLd(lang);
+  const organizationJsonLd = buildOrganizationJsonLd(lang);
+  const websiteJsonLd = buildWebSiteJsonLd(lang);
+  const servicesJsonLd = buildServicesJsonLd(lang);
 
   return (
     <html lang={lang} className={`${inter.variable} ${fraunces.variable}`}>
