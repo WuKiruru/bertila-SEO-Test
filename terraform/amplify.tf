@@ -15,9 +15,9 @@ resource "aws_amplify_app" "bertila" {
   enable_branch_auto_build    = true
   enable_branch_auto_deletion = false
 
-  # WEB = static hosting on S3/CloudFront (cheapest tier). The Next.js app
-  # uses output:"export" so every route is prerendered to plain HTML/JS.
-  platform = "WEB"
+  # WEB_COMPUTE = SSR hosting with Lambda. Required for Next.js server-rendered
+  # routes (cookies/headers at request time).
+  platform = "WEB_COMPUTE"
 
   build_spec = <<-EOT
     version: 1
@@ -32,7 +32,7 @@ resource "aws_amplify_app" "bertila" {
               commands:
                 - npm run build
           artifacts:
-            baseDirectory: out
+            baseDirectory: .next
             files:
               - '**/*'
           cache:
