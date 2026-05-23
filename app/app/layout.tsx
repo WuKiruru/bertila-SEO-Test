@@ -34,8 +34,8 @@ export function generateMetadata(): Metadata {
     : "Nuda propiedad y vivienda inversa en Cataluña | Bertila";
 
   const description = isCa
-    ? "Obtingues diners de casa teva sense deixar de viure-hi. Nuda propietat, vivenda inversa i hipoteca inversa per a majors de 65 anys a Catalunya. Assessorament sense compromís."
-    : "Obtén dinero de tu casa sin dejar de vivir en ella. Nuda propiedad, vivienda inversa e hipoteca inversa para mayores de 65 años en Cataluña. Asesoramiento sin compromiso.";
+    ? "Nuda propietat, vivenda inversa i hipoteca inversa per a majors de 65 anys a Catalunya. Obtingues diners de casa teva sense deixar de viure-hi."
+    : "Nuda propiedad, vivienda inversa e hipoteca inversa para mayores de 65 años en Cataluña. Obtén dinero de tu casa sin dejar de vivir en ella.";
 
   return {
     metadataBase: new URL(SITE_CONFIG.url),
