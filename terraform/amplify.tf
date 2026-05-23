@@ -62,7 +62,7 @@ resource "aws_amplify_branch" "main" {
 
   enable_auto_build = true
   stage             = "PRODUCTION"
-  framework         = "Next.js - SSG"
+  framework         = "Next.js - SSR"
 }
 
 resource "aws_amplify_domain_association" "bertila" {
