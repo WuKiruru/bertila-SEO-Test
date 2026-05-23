@@ -53,6 +53,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     if (!hydrated) return;
     if (typeof window !== "undefined") {
       window.localStorage.setItem(STORAGE_KEY, lang);
+      document.cookie = `${STORAGE_KEY}=${lang}; path=/; max-age=31536000; SameSite=Lax`;
       document.documentElement.lang = lang;
     }
   }, [lang, hydrated]);

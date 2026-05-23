@@ -85,7 +85,7 @@ export function Footer() {
             <li>
               <a
                 href={`mailto:${SITE_CONFIG.email}`}
-                className="break-all text-navy-200 transition hover:text-accent"
+                className="break-words text-navy-200 transition hover:text-accent lg:whitespace-nowrap lg:break-normal"
               >
                 {SITE_CONFIG.email}
               </a>
