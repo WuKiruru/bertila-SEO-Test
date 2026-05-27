@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
 import { getPreferredLanguage } from "@/lib/i18n/server-language";
+import type { Language } from "@/lib/i18n/translations";
 import { buildBreadcrumbJsonLd } from "@/lib/structured-data";
 import AccesibilidadContent from "./Content";
 
 export function generateMetadata(): Metadata {
   const lang = getPreferredLanguage();
-  const isCa = lang === "ca";
+  const contentByLang: Record<Language, { title: string; description: string }> = {
+    ca: {
+      title: "Accessibilitat",
+      description:
+        "Declaració d'accessibilitat del lloc web bertila.es i compromís amb un accés universal.",
+    },
+    es: {
+      title: "Accesibilidad",
+      description:
+        "Declaración de accesibilidad del sitio web bertila.es y compromiso con un acceso universal.",
+    },
+  };
 
-  const title = isCa ? "Accessibilitat" : "Accesibilidad";
-  const description = isCa
-    ? "Declaració d'accessibilitat del lloc web bertila.es i compromís amb un accés universal."
-    : "Declaración de accesibilidad del sitio web bertila.es y compromiso con un acceso universal.";
+  const { title, description } = contentByLang[lang];
 
   return {
     title,

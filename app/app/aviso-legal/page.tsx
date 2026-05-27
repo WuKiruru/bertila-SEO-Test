@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
 import { getPreferredLanguage } from "@/lib/i18n/server-language";
+import type { Language } from "@/lib/i18n/translations";
 import { buildBreadcrumbJsonLd } from "@/lib/structured-data";
 import AvisoLegalContent from "./Content";
 
 export function generateMetadata(): Metadata {
   const lang = getPreferredLanguage();
-  const isCa = lang === "ca";
+  const contentByLang: Record<Language, { title: string; description: string }> = {
+    ca: {
+      title: "Avís legal",
+      description:
+        "Avís legal del lloc web bertila.es — dades identificatives del titular, condicions d'ús i propietat intel·lectual.",
+    },
+    es: {
+      title: "Aviso Legal",
+      description:
+        "Aviso legal del sitio web bertila.es — datos identificativos del titular, condiciones de uso y propiedad intelectual.",
+    },
+  };
 
-  const title = isCa ? "Avís legal" : "Aviso Legal";
-  const description = isCa
-    ? "Avís legal del lloc web bertila.es — dades identificatives del titular, condicions d'ús i propietat intel·lectual."
-    : "Aviso legal del sitio web bertila.es — datos identificativos del titular, condiciones de uso y propiedad intelectual.";
+  const { title, description } = contentByLang[lang];
 
   return {
     title,

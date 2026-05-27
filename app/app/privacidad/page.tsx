@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
 import { getPreferredLanguage } from "@/lib/i18n/server-language";
+import type { Language } from "@/lib/i18n/translations";
 import { buildBreadcrumbJsonLd } from "@/lib/structured-data";
 import PrivacidadContent from "./Content";
 
 export function generateMetadata(): Metadata {
   const lang = getPreferredLanguage();
-  const isCa = lang === "ca";
+  const contentByLang: Record<Language, { title: string; description: string }> = {
+    ca: {
+      title: "Política de Privacitat",
+      description:
+        "Política de privacitat de bertila.es — tractament de dades personals conforme al RGPD i la LOPDGDD.",
+    },
+    es: {
+      title: "Política de Privacidad",
+      description:
+        "Política de privacidad de bertila.es — tratamiento de datos personales conforme al RGPD y la LOPDGDD.",
+    },
+  };
 
-  const title = isCa ? "Política de Privacitat" : "Política de Privacidad";
-  const description = isCa
-    ? "Política de privacitat de bertila.es — tractament de dades personals conforme al RGPD i la LOPDGDD."
-    : "Política de privacidad de bertila.es — tratamiento de datos personales conforme al RGPD y la LOPDGDD.";
+  const { title, description } = contentByLang[lang];
 
   return {
     title,

@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
 import { getPreferredLanguage } from "@/lib/i18n/server-language";
+import type { Language } from "@/lib/i18n/translations";
 import { buildBreadcrumbJsonLd } from "@/lib/structured-data";
 import PoliticaCookiesContent from "./Content";
 
 export function generateMetadata(): Metadata {
   const lang = getPreferredLanguage();
-  const isCa = lang === "ca";
+  const contentByLang: Record<Language, { title: string; description: string }> = {
+    ca: {
+      title: "Política de Galetes",
+      description:
+        "Informació sobre l'ús de galetes a bertila.es i com gestionar les preferències.",
+    },
+    es: {
+      title: "Política de Cookies",
+      description:
+        "Información sobre el uso de cookies en bertila.es y cómo gestionar tus preferencias.",
+    },
+  };
 
-  const title = isCa ? "Política de Galetes" : "Política de Cookies";
-  const description = isCa
-    ? "Informació sobre l'ús de galetes a bertila.es i com gestionar les preferències."
-    : "Información sobre el uso de cookies en bertila.es y cómo gestionar tus preferencias.";
+  const { title, description } = contentByLang[lang];
 
   return {
     title,
